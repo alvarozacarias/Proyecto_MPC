@@ -44,7 +44,7 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                 <div class="no-move"></div>
             </div>
             <div class="box-content">
-                <h4 class="page-header">Formulario de Registro de Mantenimiento</h4>
+                <h4 class="page-header">Formulario de Registro de Mantenimientos</h4>
                 <div id="mensaje">&nbsp;</div>
                 <form class='form-horizontal' id='form-create-mantenimiento'>
 
