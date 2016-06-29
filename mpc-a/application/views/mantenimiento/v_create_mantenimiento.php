@@ -51,7 +51,7 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Mantenimiento: </label>
                         <div class="col-sm-4">
-                            <select class="populate placeholder" name="estado" id="estado">
+                            <select class="populate placeholder" name="tipoMantenimiento" id="tipoMantenimiento">
                                 <option value="1">CORRECTIVO</option>
                                 <option value="0">PREVENTIVO</option>
                             </select>
@@ -79,7 +79,7 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                                     ?>
 
                                     <option value="<?=$ciudades->id; ?>"><?=$ciudades->nombreCiudad?></option>
-                                    //aqui se debe capturar el id de la ciudad
+                                    
 
                                 <?php  endforeach;
 
@@ -94,8 +94,6 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                         <div class="col-sm-4">
                             <select class="populate placeholder" id="personal" name="personal" onblur="upperCase()">
                                 <?php
-                                echo 'hi';
-                                echo "aoaoal";
                                 foreach($personal as $persona):
 
                                     ?>
@@ -242,7 +240,7 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                 },
             submitHandler: function(form){
 		$("#mensaje").show();
-		$("#mensaje").html("<p class='well'><strong>Guardando TIPO.......</strong></p>");
+		$("#mensaje").html("<p class='well'><strong>Guardando Mant.......</strong></p>");
                 
                 $.ajax({
                     type: "POST",

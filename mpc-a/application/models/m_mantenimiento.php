@@ -22,18 +22,20 @@ class M_mantenimiento extends CI_Model {
         }
     }
 
-    public function CreateMantenimiento($mantenimiento, $item, $ciudad, $personal, $fecha, $frecuencia, $descripcion, $estado){
+    public function CreateMantenimiento($item, $ciudad, $personal, $mantenimiento,$inicioMantenimiento,$finMantenimiento,$frecuenciaMantenimiento,$descripcion,$observacionMantenimiento,$estadoMantenimiento){
         $data = array(
-            'idTipoMantenimiento' => $mantenimiento,
             'idItem' => $item,
             'idCiudad' => $ciudad,
             'idPersonal' => $personal,
-            'fechaMantenimiento' => $fecha,
-            'frecuenciaMantenimiento' => $frecuencia,
+            'tipoMantenimiento' => $mantenimiento,
+            'inicioMantenimiento' => $inicioMantenimiento,
+            'finMantenimiento' => $finMantenimiento,
+            'frecuenciaMantenimiento' => $frecuenciaMantenimiento,
             'descripcion' => $descripcion,
-            'estadoMantenimiento' => $estado
+            'observacionMantenimiento' => $observacionMantenimiento,
+            'estadoMantenimiento' => $estadoMantenimiento
         );
-        return $this->db->insert('Mantenimiento', $data);
+        return $this->db->insert('mantenimiento', $data);
     }
 
     public function getMantenimientoById($id){

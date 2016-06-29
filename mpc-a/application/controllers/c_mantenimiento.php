@@ -23,7 +23,7 @@ class C_mantenimiento extends CI_Controller
 
     public function crear()
     {
-        //Envia datos de otras tablas a la vista de crear
+        //Envia datos de otras tablas a la vista de crear para el formulario
         $data['ciudad']=$this->m_ciudad->getAllCiudad();
         $data['personal']=$this->m_personal->getAllPersonal();
         $this->load->view('mantenimiento/v_create_mantenimiento', $data);
@@ -31,16 +31,18 @@ class C_mantenimiento extends CI_Controller
 
     public function createMantenimiento()
     {
-        $tipoMantenimiento = $this->input->post('tipoMantenimiento');
         $item = $this->input->post('item');
         $ciudad = $this->input->post('ciudad');
         $personal = $this->input->post('personal');
-        $fecha = $this->input->post('fecha');
-        $frecuencia = $this->input->post('frecuencia');
+        $mantenimiento = $this->input->post('tipoMantenimiento');
+        $inicioMantenimiento = $this->input->post('inicioMantenimieento');
+        $finMantenimiento = $this->input->post('finMantenimiento');
+        $frecuenciaMantenimiento = $this->input->post('frecuenciaMantenimiento');
         $descripcion = $this->input->post('descripcion');
-        $estado = $this->input->post('estado');
-
-        $this->m_mantenimiento->CreateMantenimiento($tipoMantenimiento, $item, $ciudad,$personal,$fecha,$frecuencia,$descripcion,$estado);
+        $observacionMantenimiento = $this->input->post('observacionMantenimiento');    
+        $estadoMantenimiento = $this->input->post('estadoMantenimiento');
+        
+        $this->m_mantenimiento->CreateMantenimiento($item, $ciudad,$personal,$mantenimiento,$inicioMantenimiento,$finMantenimiento,$frecuenciaMantenimiento,$descripcion,$observacionMantenimiento,$estadoMantenimiento);
 
         $this->load->view('mantenimiento/v_create_mantenimiento');
 
