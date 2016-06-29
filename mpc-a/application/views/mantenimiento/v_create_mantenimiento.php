@@ -52,8 +52,8 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                         <label class="col-sm-2 control-label">Mantenimiento: </label>
                         <div class="col-sm-4">
                             <select class="populate placeholder" name="tipoMantenimiento" id="tipoMantenimiento">
-                                <option value="1">CORRECTIVO</option>
-                                <option value="0">PREVENTIVO</option>
+                                <option value="CORRECTIVO">CORRECTIVO</option>
+                                <option value="PREVENTIVO">PREVENTIVO</option>
                             </select>
                         </div>
                     </div>
@@ -114,7 +114,10 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                             <input type="text" class="form-control" id="fecha" name="fecha" placeholder="Fecha Mantenimiento">
                         </div>
                     </div>
-
+                    
+                    
+                    
+                    
                     <div class="form-group">
                         <label for="date_example" class="col-sm-2 control-label">Fin de Mantenimiento: </label>
                         <div class="col-sm-4">
@@ -143,8 +146,8 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                         <label class="col-sm-2 control-label">Estado: </label>
                         <div class="col-sm-4">
                             <select class="populate placeholder" name="estado" id="estado">
-                                <option value="1">ACTIVO</option>
-                                <option value="0">DESACTIVO</option>
+                                <option value="ACTIVO">ACTIVO</option>
+                                <option value="DESACTIVO">DESACTIVO</option>
                             </select>
                         </div>
                     </div>

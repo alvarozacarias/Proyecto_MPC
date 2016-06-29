@@ -43,13 +43,12 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>MANTENIMIENTO</th>
                         <th>ITEM</th>
                         <th>CIUDAD</th>
                         <th>PERSONAL</th>
-                        <th>FECHA</th>
-                        <th>FRECUENCIA</th>
-                        <th>DESCRIPCION</th>
+                        <th>MANTENIMIENTO</th>
+                        <th>INICIO</th>
+                        <th>FIN </th>
                         <th>ESTADO</th>
                         <th>EDITAR</th>
                     </tr>
@@ -59,18 +58,15 @@
                     foreach ($mantenimientos as $value) {
                         ?>
                         <tr>
-                            <td><?=$value->idMantenimiento?></td>
-                            <td><?=$value->nombreTipoMantenimiento?></td>
-                            <td><?=$value->idItem?> <?=$value->nombreItem?></td>
+                            <td><?=$value->id?></td>
+                            <td><?=$value->nombreItem?></td>
                             <td><?=$value->nombreCiudad?></td>
                             <td><?=$value->nombre1?></td>
-                            <td><?=$value->fechaMantenimiento?></td>
-                            <td><?=$value->frecuenciaMantenimiento?> días</td>
-                            <td>
-                                <textarea style="width: 100%; height: 100%; border: none"><?=$value->descripcion?></textarea>
-                            </td>
+                            <td><?=$value->tipoMantenimiento?></td>
+                            <td><?=$value->inicioMantenimiento?></td>
+                            <td><?=$value->finMantenimiento?></td>
                             <td><?=$value->estadoMantenimiento?></td>
-                            <td><a href="#" class="edit-record btn btn-primary" data-id="<?php echo $value->idMantenimiento;?>">EDITAR</a></td></td>
+                            <td><a href="#" class="edit-record btn btn-primary" data-id="<?php echo $value->id;?>">EDITAR</a></td></td>
                         </tr>
                     <?php
                     }
@@ -129,7 +125,7 @@
             $(".modal-body").addClass('loader');
 
 
-            $.post('c_mantenimiento/edidMantenimiento/',
+            $.post('c_mantenimiento/editMantenimiento/',
                 {id: $(this).attr('data-id')},
                 function(html){
                     $(".modal-body").removeClass('loader');

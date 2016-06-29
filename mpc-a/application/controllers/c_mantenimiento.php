@@ -54,7 +54,7 @@ class C_mantenimiento extends CI_Controller
         $data['mantenimientos'] = $this->m_mantenimiento->getAllMantenimiento();
         $this->load->view('mantenimiento/v_lista_mantenimiento',$data);
     }
-    public function edidMantenimiento()
+    public function editMantenimiento()
     {
         $id_mantenimiento = $this->input->post('id');
 

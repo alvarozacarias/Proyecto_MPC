@@ -5,16 +5,11 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
 
 
 <form class='form-horizontal' id='form-editar-tipo'>
-    <input type="hidden" name="id_mantenimiento" id="mantenimiento" value="<?php echo $mantenimiento->idMantenimiento?>">
+    <input type="hidden" name="id_mantenimiento" id="mantenimiento" value="<?php echo $mantenimiento->id?>">
     <fieldset>
         <legend>Actualice cada uno de los campos</legend>
         <div id="mensaje">&nbsp;</div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Mantenimiento</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese mantenimiento" data-toggle="tooltip" data-placement="bottom" name="mantenimiento" id="mantenimiento" title="Ingresar mantenimiento" value="<?php echo $mantenimiento->idTipoMantenimiento?>">
-            </div>
-        </div>
+        
         <div class="form-group">
             <label class="col-sm-2 control-label">Item</label>
             <div class="col-sm-4">
@@ -22,7 +17,6 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
             </div>
             <div class="clearfix"></div>
         </div>
-
         <div class="form-group">
             <label class="col-sm-2 control-label">Ciudad</label>
             <div class="col-sm-4">
@@ -30,7 +24,6 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
             </div>
             <div class="clearfix"></div>
         </div>
-
         <div class="form-group">
             <label class="col-sm-2 control-label">Personal</label>
             <div class="col-sm-4">
@@ -38,11 +31,39 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
             </div>
             <div class="clearfix"></div>
         </div>
-
         <div class="form-group">
-            <label class="col-sm-2 control-label">Fecha de mantenimiento</label>
+          <label class="col-sm-2 control-label">Estado</label>
+          <div class="col-sm-4">                
+            <select id="mantenimiento" name="mantenimiento">
+                <?php  
+                    if($mantenimiento->tipoMantenimiento == 'PREVENTIVO') {
+                ?>
+                        <option value="PREVENTIVO" selected>PREVENTIVO</option>
+                        <option value="CORRECTIVO">CORRECTIVO</option>
+                <?php
+                    } 
+                    else {
+                ?>
+                        <option value="PREVENTIVO">PREVENTIVO</option>
+                        <option value="CORRECTIVO" selected>CORRECTIVO</option>
+                <?php
+                    }
+                ?>
+            </select>
+            
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Inicio Mantenimiento</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->fechaMantenimiento ?>">
+                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->inicioMantenimiento ?>">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Fin Mantenimiento</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->finMantenimiento ?>">
             </div>
             <div class="clearfix"></div>
         </div>
@@ -53,9 +74,7 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
             </div>
             <div class="clearfix"></div>
         </div>
-
-
-        <div class="form-group">
+         <div class="form-group">
             <label class="col-sm-2 control-label">Descripción</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->descripcion ?>">
@@ -63,16 +82,36 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
             <div class="clearfix"></div>
         </div>
         <div class="form-group">
-            <label class="col-sm-2 control-label">Estado</label>
+            <label class="col-sm-2 control-label">Observación</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->estadoMantenimiento ?>">
+                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->observacionMantenimiento ?>">
             </div>
             <div class="clearfix"></div>
         </div>
-
-        <?php
-
-        ?>
+        
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Estado</label>
+          <div class="col-sm-4">                
+            <select id="estadoMantenimiento" name="estadoMantenimiento">
+                <?php  
+                    if($mantenimiento->estadoMantenimiento == 'ACTIVO') {
+                ?>
+                        <option value="ACTIVO" selected>ACTIVO</option>
+                        <option value="DESACTIVO">DESACTIVO</option>
+                <?php
+                    } 
+                    else {
+                ?>
+                        <option value="ACTIVO">ACTIVO</option>
+                        <option value="DESACTIVO" selected>DESACTIVO</option>
+                <?php
+                    }
+                ?>
+            </select>
+            
+          </div>
+        </div>
+      
 
     </fieldset>
     <div class="form-group">

@@ -6,12 +6,11 @@ class M_mantenimiento extends CI_Model {
     }
 
     public function getAllMantenimiento(){
-        $this->db->select('m.idMantenimiento,t.nombreTipoMantenimiento,i.idItem,i.nombreItem,c.nombreCiudad,p.nombre1,m.fechaMantenimiento,m.frecuenciaMantenimiento,m.descripcion,m.estadoMantenimiento');
-        $this->db->from('Mantenimiento as m');
-        $this->db->join('Item as i','m.idItem=i.idItem','INNER');
-        $this->db->join('TipoMantenimiento as t','m.idTipoMantenimiento = t.idTipoMantenimiento','INNER');
-        $this->db->join('Ciudad as c','m.idCiudad = c.idCiudad','INNER');
-        $this->db->join('Personal as p','m.idPersonal = p.idPersonal','INNER');
+        $this->db->select('m.id,i.nombreItem,c.nombreCiudad,p.nombre1,m.tipoMantenimiento,m.inicioMantenimiento,m.finMantenimiento,m.frecuenciaMantenimiento,m.descripcion,m.observacionMantenimiento,m.estadoMantenimiento');
+        $this->db->from('mantenimiento as m');
+        $this->db->join('item as i','m.idItem=i.id','INNER');
+        $this->db->join('ciudad as c','m.idCiudad = c.id','INNER');
+        $this->db->join('personal as p','m.idPersonal = p.id','INNER');
 
         $query = $this->db->get();
 
@@ -40,7 +39,7 @@ class M_mantenimiento extends CI_Model {
 
     public function getMantenimientoById($id){
         $this->db->select('*');
-        $this->db->from('Mantenimiento');
+        $this->db->from('mantenimiento');
         $this->db->where('id',$id);
 
         $query = $this->db->get();
