@@ -106,17 +106,12 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                             </select>
                         </div>
                     </div>
-
-
                     <div class="form-group">
-                        <label for="date_example" class="col-sm-2 control-label">Inicio de Mantenimiento: </label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="fecha" name="fecha" placeholder="Fecha Mantenimiento">
-                        </div>
+			<label for="datetime_example" class="col-sm-2 control-label">Inicio de Mantenimiento:</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="datetime_example" name="fecha" placeholder="Fecha y Hora">
+			</div>
                     </div>
-                    
-                    
-                    
                     
                     <div class="form-group">
                         <label for="date_example" class="col-sm-2 control-label">Fin de Mantenimiento: </label>
@@ -360,3 +355,5 @@ function valida_coordenadas()
 	
         
 </script>
+
+

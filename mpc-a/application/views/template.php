@@ -6,18 +6,16 @@
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
-        <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
+                <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
+                <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
 		<link href="<?= base_url('plugins/jquery-ui/jquery-ui.min.css')?>" rel="stylesheet">
 		<!--<link href="<?= base_url('plugins/roberto/font-awesome.css')?>" rel="stylesheet">-->
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+                <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 		<link href="<?= base_url('plugins/fancybox/jquery.fancybox.css')?>" rel="stylesheet">
         <!--librerias de codigo QR-->
 
-
-
-        <link href="<?= base_url('plugins/fullcalendar/fullcalendar.css')?>" rel="stylesheet">
+                 <link href="<?= base_url('plugins/fullcalendar/fullcalendar.css')?>" rel="stylesheet">
 		<link href="<?= base_url('plugins/xcharts/xcharts.min.css')?>" rel="stylesheet">
 		<link href="<?= base_url('plugins/select2/select2.css')?>" rel="stylesheet">
 		<link href="<?= base_url('css/style.css" rel="stylesheet')?>">
@@ -26,6 +24,7 @@
 				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
 				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
 		<![endif]-->
+                
 	</head>
 <body>
 <!--Start Header-->
@@ -227,6 +226,40 @@
 <!--End Container-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script type="text/javascript">
+$(document).ready(function() {
+	// Load TimePicker plugin and callback all time and date pickers
+	LoadTimePickerScript(AllTimePickers);
+	// Create jQuery-UI tabs
+	$("#tabs").tabs();
+	// Sortable for elements
+	$(".sort").sortable({
+		items: "div.col-sm-2",
+		appendTo: 'div.box-content'
+	});
+	// Droppable for example of trash
+	$(".drop div.col-sm-2").draggable({containment: '.dropbox' });
+	$('#trash').droppable({
+		drop: function(event, ui) {
+			$(ui.draggable).remove();
+		}
+	});
+	var icons = {
+		header: "ui-icon-circle-arrow-e",
+		activeHeader: "ui-icon-circle-arrow-s"
+	};
+	// Make accordion feature of jQuery-UI
+	$("#accordion").accordion({icons: icons });
+	// Create UI spinner
+	$("#ui-spinner").spinner();
+	// Add Drag-n-Drop to boxes
+	WinMove();
+});
+</script>
+
+
+
+
 <script src="<?= base_url('plugins/jquery/jquery-2.1.0.min.js')?>"></script>
 <script src="<?= base_url('plugins/jquery-ui/jquery-ui.min.js')?>"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -241,6 +274,40 @@
 <script  src = "https://maps.googleapis.com/maps/api/js?sensor=false"  type = "text/javascript" ></script>
 
 <script  src = "/assets/gmap3.js?body=1"  type = "text/javascript" ></script>
+
+
+
+<!-- plugin para date time del formulario -->
+<script type="text/javascript">
+$(document).ready(function() {
+	// Load TimePicker plugin and callback all time and date pickers
+	LoadTimePickerScript(AllTimePickers);
+	// Create jQuery-UI tabs
+	$("#tabs").tabs();
+	// Sortable for elements
+	$(".sort").sortable({
+		items: "div.col-sm-2",
+		appendTo: 'div.box-content'
+	});
+	// Droppable for example of trash
+	$(".drop div.col-sm-2").draggable({containment: '.dropbox' });
+	$('#trash').droppable({
+		drop: function(event, ui) {
+			$(ui.draggable).remove();
+		}
+	});
+	var icons = {
+		header: "ui-icon-circle-arrow-e",
+		activeHeader: "ui-icon-circle-arrow-s"
+	};
+	// Make accordion feature of jQuery-UI
+	$("#accordion").accordion({icons: icons });
+	// Create UI spinner
+	$("#ui-spinner").spinner();
+	// Add Drag-n-Drop to boxes
+	WinMove();
+});
+</script>
 
 </body>
 </html>
