@@ -277,7 +277,7 @@ $(document).ready(function() {
 
 
 
-<!-- plugin para date time del formulario -->
+<!-- script para date time del formulario -->
 <script type="text/javascript">
 $(document).ready(function() {
 	// Load TimePicker plugin and callback all time and date pickers

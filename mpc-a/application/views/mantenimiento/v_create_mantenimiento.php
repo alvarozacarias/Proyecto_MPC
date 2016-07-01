@@ -48,7 +48,7 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                 <div id="mensaje">&nbsp;</div>
                 <form class='form-horizontal' id='form-create-mantenimiento'>
 
-                    <div class="form-group">
+                    <div class="row form-group">
                         <label class="col-sm-2 control-label">Mantenimiento: </label>
                         <div class="col-sm-4">
                             <select class="populate placeholder" name="tipoMantenimiento" id="tipoMantenimiento">
@@ -57,7 +57,6 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                             </select>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Item: </label>
                         
@@ -109,20 +108,19 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                     <div class="form-group">
 			<label for="datetime_example" class="col-sm-2 control-label">Inicio de Mantenimiento:</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" id="datetime_example" name="fecha" placeholder="Fecha y Hora">
+				<input type="text" class="form-control" id="datetime_example" name="inicioMantenimiento" placeholder="Fecha y Hora">
 			</div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="date_example" class="col-sm-2 control-label">Fin de Mantenimiento: </label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="fecha" name="fecha" placeholder="Fecha Mantenimiento">
-                        </div>
+			<label for="datetime_example" class="col-sm-2 control-label">Fin de Mantenimiento: </label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="datetime" name="finMantenimiento" placeholder="Fecha y Hora">
+			</div>
                     </div>
-
-
-
-
+    
+                    
+                    
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Frecuencia de Mantenimiento: </label>
                         <div class="col-sm-4">
@@ -355,5 +353,3 @@ function valida_coordenadas()
 	
         
 </script>
-
-
