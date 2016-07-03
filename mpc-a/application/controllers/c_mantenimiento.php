@@ -35,7 +35,7 @@ class C_mantenimiento extends CI_Controller
         $ciudad = $this->input->post('ciudad');
         $personal = $this->input->post('personal');
         $mantenimiento = $this->input->post('tipoMantenimiento');
-        $inicioMantenimiento = $this->input->post('inicioMantenimieento');
+        $inicioMantenimiento = $this->input->post('inicioMantenimiento');
         $finMantenimiento = $this->input->post('finMantenimiento');
         $frecuenciaMantenimiento = $this->input->post('frecuenciaMantenimiento');
         $descripcion = $this->input->post('descripcion');
@@ -43,12 +43,8 @@ class C_mantenimiento extends CI_Controller
         $estadoMantenimiento = $this->input->post('estadoMantenimiento');
         
         $this->m_mantenimiento->CreateMantenimiento($item, $ciudad,$personal,$mantenimiento,$inicioMantenimiento,$finMantenimiento,$frecuenciaMantenimiento,$descripcion,$observacionMantenimiento,$estadoMantenimiento);
-
         $this->load->view('mantenimiento/v_create_mantenimiento');
-
-
     }
-
     public function listaMantenimiento()
     {
         $data['mantenimientos'] = $this->m_mantenimiento->getAllMantenimiento();

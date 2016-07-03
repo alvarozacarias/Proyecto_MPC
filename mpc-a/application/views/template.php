@@ -6,25 +6,24 @@
 		<meta name="description" content="description">
 		<meta name="author" content="DevOOPS">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-                <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
-                <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
-		<link href="<?= base_url('plugins/jquery-ui/jquery-ui.min.css')?>" rel="stylesheet">
+
+        <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
+        <link href="<?= base_url('plugins/jquery-ui/jquery-ui.min.css')?>" rel="stylesheet">
+        <link href="<?= base_url('plugins/bootstrap/bootstrap.css')?>" rel="stylesheet">
+        <<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+        <link href="<?= base_url('plugins/fancybox/jquery.fancybox.css')?>" rel="stylesheet">
+        <link href="<?= base_url('plugins/fullcalendar/fullcalendar.css')?>" rel="stylesheet">
+        <link href="<?= base_url('plugins/xcharts/xcharts.min.css')?>" rel="stylesheet">
+        <link href="<?= base_url('plugins/select2/select2.css')?>" rel="stylesheet">
 		<!--<link href="<?= base_url('plugins/roberto/font-awesome.css')?>" rel="stylesheet">-->
-                <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-		<link href="<?= base_url('plugins/fancybox/jquery.fancybox.css')?>" rel="stylesheet">
-        <!--librerias de codigo QR-->
-
-                 <link href="<?= base_url('plugins/fullcalendar/fullcalendar.css')?>" rel="stylesheet">
-		<link href="<?= base_url('plugins/xcharts/xcharts.min.css')?>" rel="stylesheet">
-		<link href="<?= base_url('plugins/select2/select2.css')?>" rel="stylesheet">
-		<link href="<?= base_url('css/style.css" rel="stylesheet')?>">
+        <link href="<?= base_url('css/style.css" rel="stylesheet')?>">
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
-				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
-				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+		<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
 		<![endif]-->
-                
+
 	</head>
 <body>
 <!--Start Header-->
@@ -62,7 +61,7 @@
 						<a href="#" class="show-sidebar">
 						  <i class="fa fa-bars"></i>
 						</a>
-						
+
 					</div>
 					<div class="col-xs-4 col-sm-8 top-panel-right">
 						<ul class="nav navbar-nav pull-right panel-menu">
@@ -76,14 +75,14 @@
 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-									
+
 									<i class="fa fa-angle-down pull-right"></i>
 									<div class="user-mini pull-right">
 										<span class="welcome">Bienvenido,</span>
 										<span>Administrador</span>
 									</div>
 								</a>
-								<ul class="dropdown-menu">									
+								<ul class="dropdown-menu">
 									<li>
 										<a href="c_login/salir">
 											<i class="fa fa-power-off"></i>
@@ -206,11 +205,11 @@
                 </li>
 
 
-				
-                                
+
+
                                 <!-- Asta a qui le mnu Admi!-->
-                                
-												 				
+
+
 			</ul>
 		</div>
 		<!--Start Content-->
@@ -226,36 +225,7 @@
 <!--End Container-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-<script type="text/javascript">
-$(document).ready(function() {
-	// Load TimePicker plugin and callback all time and date pickers
-	LoadTimePickerScript(AllTimePickers);
-	// Create jQuery-UI tabs
-	$("#tabs").tabs();
-	// Sortable for elements
-	$(".sort").sortable({
-		items: "div.col-sm-2",
-		appendTo: 'div.box-content'
-	});
-	// Droppable for example of trash
-	$(".drop div.col-sm-2").draggable({containment: '.dropbox' });
-	$('#trash').droppable({
-		drop: function(event, ui) {
-			$(ui.draggable).remove();
-		}
-	});
-	var icons = {
-		header: "ui-icon-circle-arrow-e",
-		activeHeader: "ui-icon-circle-arrow-s"
-	};
-	// Make accordion feature of jQuery-UI
-	$("#accordion").accordion({icons: icons });
-	// Create UI spinner
-	$("#ui-spinner").spinner();
-	// Add Drag-n-Drop to boxes
-	WinMove();
-});
-</script>
+
 
 
 
@@ -271,45 +241,11 @@ $(document).ready(function() {
 <script src="<?= base_url('js/devoops.js')?>"></script>
 
 
-<script  src = "https://maps.googleapis.com/maps/api/js?sensor=false"  type = "text/javascript" ></script>
-
-<script  src = "/assets/gmap3.js?body=1"  type = "text/javascript" ></script>
 
 
-
-<!-- script para date time del formulario -->
-<script type="text/javascript">
-$(document).ready(function() {
-	// Load TimePicker plugin and callback all time and date pickers
-	LoadTimePickerScript(AllTimePickers);
-	// Create jQuery-UI tabs
-	$("#tabs").tabs();
-	// Sortable for elements
-	$(".sort").sortable({
-		items: "div.col-sm-2",
-		appendTo: 'div.box-content'
-	});
-	// Droppable for example of trash
-	$(".drop div.col-sm-2").draggable({containment: '.dropbox' });
-	$('#trash').droppable({
-		drop: function(event, ui) {
-			$(ui.draggable).remove();
-		}
-	});
-	var icons = {
-		header: "ui-icon-circle-arrow-e",
-		activeHeader: "ui-icon-circle-arrow-s"
-	};
-	// Make accordion feature of jQuery-UI
-	$("#accordion").accordion({icons: icons });
-	// Create UI spinner
-	$("#ui-spinner").spinner();
-	// Add Drag-n-Drop to boxes
-	WinMove();
-});
-</script>
 
 </body>
 </html>
 
-<!--  Esta actualizado el 02-072016 -->
+<!--  Esta actualizado el 02-07-2016 -->
+
