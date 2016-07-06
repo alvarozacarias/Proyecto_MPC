@@ -28,7 +28,6 @@ class C_mantenimiento extends CI_Controller
         $data['personal']=$this->m_personal->getAllPersonal();
         $this->load->view('mantenimiento/v_create_mantenimiento', $data);
     }
-
     public function createMantenimiento()
     {
         $item = $this->input->post('item');

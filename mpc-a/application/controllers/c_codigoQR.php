@@ -12,7 +12,7 @@ class C_codigoQR extends CI_Controller {
 
     function createCodigoQR()
     {
-        $params['data'] = 'Hola esto es desde el controlador esto es la segunda prueba';
+        $params['data'] = 'Hola esto 2';
         $params['level'] = 'H';
         $params['size'] = 10;
         $params['savename'] = FCPATH.'tes.png';
