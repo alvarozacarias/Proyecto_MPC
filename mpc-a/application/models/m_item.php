@@ -4,18 +4,7 @@ class M_item extends CI_Model {
         parent::__construct();
     }
 
-    public function getAllItem(){
-        $this->db->select('*');
-        $this->db->from('Item');
 
-        $query = $this->db->get();
-
-        if ($query->num_rows() > 0){
-            return $query->result();
-        }else{
-            return null;
-        }
-    }
 }
 ?>
 

@@ -190,8 +190,8 @@
                         <span class="hidden-xs">ITEM LEYENDA</L></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="ajax-link" href="c_itemLeyenda/createItemLeyenda">Crear Item Leyenda</a></li>
-                        <li><a class="ajax-link" href="c_itemLeyenda/listaItemLeyenda">Buscar Item Leyenda</a></li>
+                        <li><a class="ajax-link" href="c_itemLeyenda/createItem">Crear Item Leyenda</a></li>
+                        <li><a class="ajax-link" href="c_itemLeyenda/listaItem">Buscar Item Leyenda</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
