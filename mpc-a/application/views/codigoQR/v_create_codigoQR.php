@@ -157,8 +157,8 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
             $(".modal-body").html('');
             $(".modal-body").addClass('loader');
 
-
-            $.post('c_mantenimiento/editMantenimiento/',
+            //Seria editItemCodigoQR
+            $.post('c_codigoQR/editItemCodigoQR/',
                 {id: $(this).attr('data-id')},
                 function(html){
                     $(".modal-body").removeClass('loader');

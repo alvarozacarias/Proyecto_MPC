@@ -19,6 +19,19 @@ class M_codigoQR extends CI_Model {
         }
 
     }
+    public function getItemCodigoQRById($id){
+        $this->db->select('*');
+        $this->db->from('items');
+        $this->db->where('id',$id);
+
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0){
+            return $query->row();
+        }else{
+            return null;
+        }
+    }
 }
 ?>
 

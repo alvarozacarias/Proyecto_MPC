@@ -23,5 +23,12 @@ class C_codigoQR extends CI_Controller {
 
         //$this->load->view('codigoQR/v_create_codigoQR');
     }
+    public function editItemCodigoQR()
+    {
+        $id_codigoQR = $this->input->post('id');
+
+        $data['codigosqr'] = $this->m_codigoQR->getItemCodigoQRById($id_codigoQR);
+        $this->load->view('codigoQR/v_update_itemCodigoQR',$data);
+    }
 }
 ?>
