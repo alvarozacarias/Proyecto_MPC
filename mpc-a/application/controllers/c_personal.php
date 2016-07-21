@@ -14,29 +14,25 @@ class C_personal extends CI_Controller {
         $data['personales'] = $this->m_personal->getAllPersonal();
         $this->load->view('personal/v_lista_personal',$data);
     }
-
     //metodo para obtener personal por ciudad
     public function getAllPersonalByCiudad($idCiudad)
     {
         $data['PersByCiu']=$this->m_personal->getAllPersonalByCiudad($idCiudad);
         $this->load->view('mantenimiento/v_create_mantenimiento',$data);
     }
-    //
-    public function createPersonal(){
+    public function createPersonal()
+    {
         $data['ciudad']=$this->m_ciudad->getAllCiudad();
         $this->load->view('personal/v_create_personal',$data);
     }
-
-    public function createPersonalAhora(){
+    public function createPersonalAhora()
+    {
         $usuario = $this->input->post('usuario');
         $pass = $this->input->post('pass');
         $perfil = $this->input->post('perfil');
-
         $elemento = $this->m_personal->Create_Usuario($usuario, $pass, $perfil);
-
         $this->load->view('personal/v_create_personal');
     }
-
     public function listaPersonal(){
         $data['personales'] = $this->m_personal->getAllPersonal();
         $this->load->view('personal/v_lista_personal',$data);

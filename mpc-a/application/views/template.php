@@ -23,7 +23,6 @@
 		<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
 		<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
 		<![endif]-->
-
 	</head>
 <body>
 <!--Start Header-->
@@ -154,16 +153,7 @@
                         <li><a class="ajax-link" href="c_ciudad/listaCiudad">Buscar Ciudad</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="fa fa-flash"></i>
-                        <span class="hidden-xs">HILO DE F.O.</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="ajax-link" href="c_hiloFibraOptica/createHiloFibraOptica">Crear Hilo De F.O.</a></li>
-                        <li><a class="ajax-link" href="c_hiloFibraOptica/listaHiloFibraOptica">Buscar Hilo De F.O.</a></li>
-                    </ul>
-                </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">
                         <i class="fa  fa-qrcode"></i>
@@ -171,23 +161,12 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="ajax-link" href="c_codigoQR/createCodigoQR">Crear Codigo QR</a></li>
-                        <li><a class="ajax-link" href="c_codigoQR/listaCodigoQR">Buscar Codigo QR</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="fa  fa-puzzle-piece"></i>
-                        <span class="hidden-xs">ENCRIPTADO</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="ajax-link" href="c_encriptado/createEncriptado">Crear Encriptado</a></li>
-                        <li><a class="ajax-link" href="c_encriptado/listaEncriptado">Buscar Encriptado</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">
                         <i class="fa fa-tasks"></i>
-                        <span class="hidden-xs">ITEM LEYENDA</L></span>
+                        <span class="hidden-xs">ITEM</L></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="ajax-link" href="c_itemLeyenda/createItem">Crear Item Leyenda</a></li>
@@ -203,13 +182,7 @@
                         <li><a class="ajax-link" href="c_mapa/verMapa">Mapa de tendido</a></li>
                     </ul>
                 </li>
-
-
-
-
                                 <!-- Asta a qui le mnu Admi!-->
-
-
 			</ul>
 		</div>
 		<!--Start Content-->
@@ -242,6 +215,7 @@
 
 
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyAPkwCsLOkedHZo7wi6kc0S2YELbFWmjtM"></script>
 
 
 </body>

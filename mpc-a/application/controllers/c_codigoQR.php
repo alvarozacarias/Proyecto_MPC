@@ -12,22 +12,27 @@ class C_codigoQR extends CI_Controller {
 
     function createCodigoQR()
     {
-        //$params['data'] = 'Hola esto 2';
-        //$params['level'] = 'H';
-        //$params['size'] = 10;
-        //$params['savename'] = FCPATH.'tes.png';
-        
-        //$this->ciqrcode->generate($params);
+
         $data['items'] = $this->m_codigoQR->getAllItemCodigoQR();
         $this->load->view('codigoQR/v_create_codigoQR',$data);
-
-        //$this->load->view('codigoQR/v_create_codigoQR');
     }
     public function editItemCodigoQR()
     {
-        $id_codigoQR = $this->input->post('id');
 
+        $id_codigoQR = $this->input->post('id');
         $data['codigosqr'] = $this->m_codigoQR->getItemCodigoQRById($id_codigoQR);
+
+        $varId = $data['codigosqr']->id;
+        $varNombreItem = $data['codigosqr']->nombreItem;
+        $varIdEntidad = $data['codigosqr']->idEntidad;
+        $varDireccion = $data['codigosqr']->direccion;
+        $varColorFO = $data['codigosqr']->colorFO;
+        //Desde aqui se crea codigo QR
+        $params['data'] = $varId.' '.$varNombreItem.' '.$varIdEntidad.' '.$varDireccion.' '.$varColorFO;
+        $params['level'] = 'H';
+        $params['size'] = 10;
+        $params['savename'] = FCPATH.'tes1.png';
+        $this->ciqrcode->generate($params);
         $this->load->view('codigoQR/v_update_itemCodigoQR',$data);
     }
 }

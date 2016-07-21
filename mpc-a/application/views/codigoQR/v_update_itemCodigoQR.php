@@ -5,122 +5,66 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
 
 
 <form class='form-horizontal' id='form-editar-tipo'>
-    <input type="hidden" name="id_codigoqr" id="mantenimiento" value="<?php echo $mantenimiento->id?>">
+    <input type="hidden" name="id_codigoqr" id="codigoQR" value="<?php echo $codigosqr->id?>">
     <fieldset>
-        <legend>Actualice cada uno de los campos</legend>
+        <legend>Datos codigo QR</legend>
         <div id="mensaje">&nbsp;</div>
         
         <div class="form-group">
+            <label class="col-sm-2 control-label">Id Item</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="" data-toggle="tooltip" data-placement="bottom" name="" id="" title="" value="<?php echo $codigosqr->id ?>" disabled>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-2 control-label">Item</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->idItem ?>">
+                <input type="text" class="form-control" placeholder="" data-toggle="tooltip" data-placement="bottom" name="" id="" title="" value="<?php echo $codigosqr->nombreItem ?>" disabled>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="form-group">
-            <label class="col-sm-2 control-label">Ciudad</label>
+            <label class="col-sm-2 control-label">Nombre entidad</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->idCiudad ?>">
+                <input type="text" class="form-control" placeholder="" data-toggle="tooltip" data-placement="bottom" name="" id="" title="" value="<?php echo $codigosqr->nombreEntidad?>" disabled>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="form-group">
-            <label class="col-sm-2 control-label">Personal</label>
+            <label class="col-sm-2 control-label">Direccion de Item</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->idPersonal ?>">
+                <input type="text" class="form-control" placeholder="" data-toggle="tooltip" data-placement="bottom" name="" id="" title="" value="<?php echo $codigosqr->direccion ?>" disabled>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Estado</label>
-          <div class="col-sm-4">                
-            <select id="mantenimiento" name="mantenimiento">
-                <?php  
-                    if($mantenimiento->tipoMantenimiento == 'PREVENTIVO') {
-                ?>
-                        <option value="PREVENTIVO" selected>PREVENTIVO</option>
-                        <option value="CORRECTIVO">CORRECTIVO</option>
-                <?php
-                    } 
-                    else {
-                ?>
-                        <option value="PREVENTIVO">PREVENTIVO</option>
-                        <option value="CORRECTIVO" selected>CORRECTIVO</option>
-                <?php
-                    }
-                ?>
-            </select>
-            
-          </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Inicio Mantenimiento</label>
+            <label class="col-sm-2 control-label">Color F.O.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->inicioMantenimiento ?>">
+                <input type="text" class="form-control" placeholder="" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $codigosqr->colorFO?>" disabled>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="form-group">
-            <label class="col-sm-2 control-label">Fin Mantenimiento</label>
+            <label class="col-sm-2 control-label">Codigo QR</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->finMantenimiento ?>">
+                <div id='muestra'>
+                    <?php
+                        echo '<img src="'.base_url().'tes1.png" height="200" width="200" />';
+                    ?>
+                </div>
+                <h4>Codigo QR encriptado</h4>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="form-group">
-            <label class="col-sm-2 control-label">Frecuencia de mantenimiento</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->frecuenciaMantenimiento ?>">
+            <div class="col-sm-9 col-sm-offset-3">
+                <!--<button type="button" class="btn btn-default" onclick="window.print();">IMPRIMIR</button>-->
+                <button type="button" class="btn btn-default" onclick="javascript:imprSelec('muestra')">IMPRIMIR</button>
             </div>
-            <div class="clearfix"></div>
         </div>
-         <div class="form-group">
-            <label class="col-sm-2 control-label">Descripción</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->descripcion ?>">
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Observación</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Ingrese Descripcion" data-toggle="tooltip" data-placement="bottom" name="contrasena" id="contrasena" title="Ingresar Descripcion" value="<?php echo $mantenimiento->observacionMantenimiento ?>">
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        
-        <div class="form-group">
-          <label class="col-sm-2 control-label">Estado</label>
-          <div class="col-sm-4">                
-            <select id="estadoMantenimiento" name="estadoMantenimiento">
-                <?php  
-                    if($mantenimiento->estadoMantenimiento == 'ACTIVO') {
-                ?>
-                        <option value="ACTIVO" selected>ACTIVO</option>
-                        <option value="DESACTIVO">DESACTIVO</option>
-                <?php
-                    } 
-                    else {
-                ?>
-                        <option value="ACTIVO">ACTIVO</option>
-                        <option value="DESACTIVO" selected>DESACTIVO</option>
-                <?php
-                    }
-                ?>
-            </select>
-            
-          </div>
-        </div>
-      
-
     </fieldset>
-    <div class="form-group">
-        <div class="col-sm-9 col-sm-offset-3">
-            <button type="submit" class="btn btn-primary btn-large">Guardar</button>
-        </div>
-    </div>
 </form>
-
 
 <script type="text/javascript">
     $(document).ready(function (){
@@ -157,7 +101,13 @@ $atributos = "class='form-horizontal' index.php/c_tipo/updatetipo'";
 
 
         });
+
     });
 </script>
 
 <script src="<?= base_url('plugins/dupluicar/jquery.addfield.js')?>"></script>
+
+<script type="text/javascript">
+    function imprSelec(muestra)
+    {var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>

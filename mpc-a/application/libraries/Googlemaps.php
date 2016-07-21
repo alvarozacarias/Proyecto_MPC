@@ -1113,7 +1113,7 @@ class Googlemaps {
 		
 		if ($this->maps_loaded == 0)
 		{
-			if ($this->apiKey!="") 
+			if ($this->apiKey!="")
 			{
 				if ($this->https) { $apiLocation = 'https'; }else{ $apiLocation = 'http'; }
 				$apiLocation .= '://maps.googleapis.com/maps/api/js?key='.$this->apiKey.'&';

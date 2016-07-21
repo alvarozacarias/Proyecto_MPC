@@ -38,8 +38,13 @@
                 </div>
                 <div class="no-move"></div>
             </div>
-            <div class="box-content no-padding">
-                <table class="table table-bordered table-striped table-hover table-heading table-datatable" id="datatable-1">
+
+
+
+
+
+            <div class="table-responsive box-content no-padding">
+                 <table class="table table-bordered table-striped table-hover table-datatable table-heading ">
                     <thead>
                     <tr>
                         <th>ID</th>

@@ -26,7 +26,7 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
     <div id="breadcrumb" class="col-md-12">
         <ol class="breadcrumb">
             <li><a href="#">Administrar Codigo QR</a></li>
-            <li><a href="#">Crear Codigo QR</a></li>
+            <li><a href="#">Codigo QR</a></li>
         </ol>
     </div>
 </div>
@@ -36,7 +36,7 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
             <div class="box-header">
                 <div class="box-name">
                     <i class="fa fa-search"></i>
-                    <span>Crear Codigo QR</span>
+                    <span>Codigo QR</span>
 
                 </div>
                 <div class="box-icons">
@@ -53,11 +53,14 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                 <div class="no-move"></div>
             </div>
             <div class="box-content">
-                <h4 class="page-header">Formulario de Registro de Codigo QR</h4>
+                <h4 class="page-header">Registro de Codigo QR</h4>
+
                 <div id="mensaje">&nbsp;</div>
 
                 <!-- Desde aqui empieza la tabla (lista de los items para encriptar)-->
-                <table class="table table-bordered table-striped table-hover table-heading table-datatable" id="datatable-1">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+
                     <thead>
                     <tr>
                         <!--
@@ -90,20 +93,17 @@ $perfil = array('name' => 'perfil', 'id' => 'perfil', 'placeholder' => 'Ingrese 
                             <td><?=$value->nombreEntidad?></td>
                             <td><?=$value->direccion?></td>
                             <td><?=$value->colorFO?></td>
-                            <td><a href="#" class="edit-record btn btn-primary" data-id="<?php echo $value->id;?>">CREAR QR</a></td></td>
+                            <td><a href="#" class="edit-record btn btn-primary" data-id="<?php echo $value->id;?>">VER CODIGO QR</a></td></td>
                         </tr>
                     <?php
                     }
                     ?>
                     </tbody>
-                </table>
+                    </table>
+                </div>
                 <!-- Aqui termina la lista -->
 
                 <!-- Esto es para imprimir el codigo QR
-                <?php
-            
-                     echo '<img src="'.base_url().'tes.png" />';
-                ?>
                 -->
 
 

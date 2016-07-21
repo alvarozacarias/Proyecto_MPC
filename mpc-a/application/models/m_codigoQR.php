@@ -17,13 +17,12 @@ class M_codigoQR extends CI_Model {
         }else{
             return null;
         }
-
     }
     public function getItemCodigoQRById($id){
         $this->db->select('*');
-        $this->db->from('items');
-        $this->db->where('id',$id);
-
+        $this->db->from('item as i');
+        $this->db->join('entidad as ide',' i.identidad = ide.id' ,'INNER');
+        $this->db->where('i.id',$id);
         $query = $this->db->get();
 
         if ($query->num_rows() > 0){

@@ -11,22 +11,9 @@ class C_mapa extends CI_Controller {
 
     public  function verMapa()
     {
-        $this->load->library('googlemaps');
 
-        //configuracion de mapa
-        $config=array();
-        $config['center']='cochabamba,bolivia';
-        //$config['zoom']=90;
-        $this->googlemaps->initialize($config);
-        //fin de la configuracion de mapa
-        $data['map']=$this->googlemaps->create_map();
 
-        $this->load->view('mapa/v_mapa-google',$data);
-    }
-    public function ver()
-    {
-        //$mifirePHP->log("Este es el contenido del Array miArray");
-        $this->load->view('personal/v_create_personal');
+        $this->load->view('mapa/v_mapa-google');
     }
 }
 ?>
