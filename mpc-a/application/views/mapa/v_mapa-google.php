@@ -42,6 +42,11 @@
                 <span class="fa fa-minus-square"></span>
                 Eliminar Item
             </button>
+
+            <button type="button" class="btn btn-default btn-sm" onclick="geolocalizacion()">
+                <span class="fa fa-map-marker"></span>
+                Hubicarse en el mapa
+            </button>
                 <!---Aqui se llama al mapa y se le da el tamaño-->
             <div id="map" style="width:1030px;height:500px"></div>
             <!--Aqui empieza la leyenda-->
@@ -99,51 +104,21 @@
     //var varEliminarItem=false;
     var accion='sin_accion';
     //////////
+    var latlng = new google.maps.LatLng(-17.390852, -66.158300);//aqui podria ir la latitud y longitud de la ciudad del empleado
     var mapCanvas = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -17.395768, lng: -66.30919},
+        center: latlng,
         zoom: 17
     });
-    //Desde aqui comienza la geolocalizacion de la persona/////////////
-    var infoWindow = new google.maps.InfoWindow({map: mapCanvas});
-    // Try HTML5 geolocation.
-    if (navigator.geolocation)
-    {
-        navigator.geolocation.getCurrentPosition(function(position)
-        {
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-            posicion=pos;//para enviar la posicion a nivel global
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Aqui me encuentro.');
-            mapCanvas.setCenter(pos);
-        }, function()
-        {
-            handleLocationError(true, infoWindow, mapCanvas.getCenter());
-        });
-    }
-    else
-    {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, mapCanvas.getCenter());
-    }
-    //Aqui termina la geolocalizacion de la persona///////////////////
+
     //aqui empieza la programacion par la generacion de marcadores
     //aqui empieza la creacion de marcadores
     function crearMarcador(direccionImg,posicionLocal)
     {
-        //variables
-        //var accionPolyline=false;
         var posicionMet='';
         var estadoDrag;
-        var image = {
-            url: direccionImg,
-            size: new google.maps.Size(20, 32)
-        };
         if(posicionLocal=='vacio')
         {
-            posicionMet=posicion;
+            posicionMet=latlng;
             estadoDrag=true;
         }
         else
@@ -163,7 +138,12 @@
         marcadores.push(vmarker);
         tapMarcador(vmarker);//para hacer tap en cualquier marcador
         accion='sin_accion';
+        //para obtener la direccion del marcador
+
+
     }
+
+
     function eliminarItem(posItemEliminado)
     {
         marcadores[posItemEliminado].setMap(null);
@@ -174,10 +154,9 @@
     }
     function tapMarcador(marker)
     {
-        google.maps.event.addListener(marker, 'mousedown', function()
+        google.maps.event.addListener(marker, 'mousedown', function(event)
         {
-            console.log('marcadores '+marcadores);
-            console.log(marker.getPosition());
+            console.log('las cordenadas son'+event.latLng);//para sacar las cordenadas solo se añadio (event) en la line a de arriba
             switch(accion)
             {
                 case 'eliminar_item':
@@ -185,13 +164,11 @@
                     eliminarItem(itemEliminado);
                     break;
                 case 'crear_linea':
-                     console.log('funcion para crear item');
                     //mientras se crea la linea deberia bloquearse los demas botones para no ocacionar conflictos
-                    crearLinea(marker.getPosition());
-
+                   
+                    crearLinea(/* aqui las posiciones*/);
                     break;
                 case 'sin_accion':
-                    console.log('sin accion');
                     break;
                 default:
             }
@@ -215,7 +192,6 @@
     {
         if(cordenadas.length<=1)
         {
-            console.log(cordenadas.length);
             if(cordenadas.length==1)
             {
                 var vcordenadas=[
@@ -235,5 +211,34 @@
             cordenadas.push(punto);
             console.log(punto);
         }
+    }
+    function geolocalizacion()
+    {
+        //Desde aqui comienza la geolocalizacion de la persona/////////////
+        var infoWindow = new google.maps.InfoWindow({map: mapCanvas});
+        // Try HTML5 geolocation.
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(function(position)
+            {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                //posicion=pos;//para enviar la posicion a nivel global
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Aqui me encuentro.');
+                mapCanvas.setCenter(pos);
+            }, function()
+            {
+                handleLocationError(true, infoWindow, mapCanvas.getCenter());
+            });
+        }
+        else
+        {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, mapCanvas.getCenter());
+        }
+        //Aqui termina la geolocalizacion de la persona///////////////////
     }
 </script>
